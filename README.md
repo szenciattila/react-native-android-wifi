@@ -142,8 +142,12 @@ Starts native Android wifi network scanning and returns list
 ``` javascript
 wifi.reScanAndLoadWifiList((wifiStringList) => {
   var wifiArray = JSON.parse(wifiStringList);
-  console.log('Detected wifi networks - ',wifiArray);
-});
+  console.log(wifiArray);
+},
+(error) => {
+  console.log(error);
+}
+);
 ```
 
 Method to force wifi usage. Android by default sends all requests via mobile data if the connected wifi has no internet connection.
